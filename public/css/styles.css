@@ -1,0 +1,231 @@
+*{
+    margin:0;
+    padding:0
+}
+ html, body, .wrap{
+    height: 100%;
+}
+ body{
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+ header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ a{
+    text-decoration: none;
+}
+ h1{
+    position:relative;
+    text-transform: uppercase;
+    display:inline-block;
+    font-weight: normal;
+    font-size:50px;
+    text-align: center;
+}
+ h1 span{
+    font-weight: bold
+}
+ h2{
+    position:relative;
+    text-transform: uppercase;
+    display:inline-block;
+    font-weight: normal;
+    font-size:50px;
+    text-align: center;
+}
+ h2 span{
+    font-weight: bold
+}
+ h1::after{
+    content: '';
+    display: block;
+    border: 8px solid rgba(255, 255, 255, .1);
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    right: -55px;
+    top: 50%;
+    margin-top: -175px;
+}
+ ul{
+    list-style: none;
+}
+ .contact{
+    box-sizing: border-box;
+    padding: 20px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ed3e3e+0,ed3e3e+50,35383b+50,35383b+100 */
+     background: #ed3e3e;
+    /* Old browsers */
+     background: -moz-linear-gradient(left, #ed3e3e 0%, #ed3e3e 50%, #35383b 50%, #35383b 100%);
+    /* FF3.6-15 */
+     background: -webkit-linear-gradient(left, #ed3e3e 0%,#ed3e3e 50%,#35383b 50%,#35383b 100%);
+    /* Chrome10-25,Safari5.1-6 */
+     background: linear-gradient(to right, #ed3e3e 0%,#ed3e3e 50%,#35383b 50%,#35383b 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed3e3e', endColorstr='#35383b',GradientType=1 );
+    /* IE6-9 */
+}
+ .contact .wrap{
+    height:auto;
+    max-width: 800px;
+    box-shadow: 0 0 40px rgba(1,1,1,0.2);
+     background-color: #f5f5f5;
+}
+ .wrap{
+    background: rgba(255, 0, 0, .75);
+    color:#fff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+ .nav a{
+    color:#fff;
+    font-size: 17px;
+}
+ .nav{
+    font-weight: bold;
+}
+ .nav li{
+    display: inline-block;
+    text-align: right;
+    margin-right:20px
+}
+ .slogan{
+    text-align: center;
+    margin-top: 120px;
+}
+ .countDown{
+    width: 60%;
+    margin: 150px auto 0;
+    display: flex;
+    justify-content: space-around;
+}
+ .countDown div{
+    text-align: center;
+    display:inline-block;
+}
+ .countDown strong{
+    display: block;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+ .countDown span{
+    font-size: 35px;
+     display: block;
+    margin-bottom: 5px;
+}
+ form{
+}
+ form input, form textarea{
+    margin-bottom:50px;
+    background:none;
+    border:none;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+}
+ form input[type~=text], form input[type~=email]{
+    border-bottom:1px solid #e73d3d
+}
+ form textarea{
+    border-bottom:1px solid #e73d3d;
+    height: 200px;
+}
+ form{
+}
+ form input[type~=button]{
+    font-size: 15px;
+    margin:0;
+     letter-spacing: 3px;
+    color:#e73d3d;
+    text-transform:uppercase;
+    border:1px solid #e73d3d;
+    padding:5px;
+    width: auto;
+    padding:5px 15px
+}
+ form{
+}
+ input::placeholder, textarea::placeholder {
+    font-family: "Roboto";
+    color: rgb(53,55,58);
+    font-size:16px;
+}
+ .left{
+     padding-top: 10px;
+    color: #fff;
+    width:35%;
+    line-height: 25px;
+    float: left;
+    padding-right: 20px;
+     box-sizing: border-box;
+}
+ .content{
+    overflow: hidden;
+     margin: 40px 0;
+}
+ .left p{
+    padding: 30px 0;
+}
+ .left p:after{
+    content:'';
+    display:block;
+    width:10%;
+    border-bottom:solid 2px #fff;
+    padding: 20px 0;
+}
+ .left p:before{
+    content:'';
+    display:block;
+    width:10%;
+    border-top:solid 2px #fff;
+    padding: 20px 0;
+}
+ .infos{
+    margin-bottom: 20px;
+}
+ .infos li{
+    margin-bottom: 10px
+}
+ .right{
+    width:65%;
+    float: left;
+}
+ .socialMedia li {
+    display: inline-block;
+    margin-right: 5px;
+}
+ .socialMedia li:last-of-type{
+    margin-right: 0;
+}
+ .socialMedia img {
+     filter: brightness(0) invert(1);
+     opacity: .25;
+}
+ .warning{
+    color:#000;
+    font-size:14px;
+    margin-bottom: 20px;
+}
+ @media only screen and (max-width: 480px) {
+     .contact{
+        background: #ed3e3e;
+    }
+    .left,
+    .right{float: none;width: 100%;}
+    .right{margin-top:20px}
+    h1{font-size: 25px;}
+    h1::after{border: 4px solid rgba(255, 255, 255, .1);
+        width: 136px;
+        height: 136px;
+        position: absolute;
+        right: -9px;
+        top: 50%;
+        margin-top: -71px;}
+        .countDown span{font-size: 22px;}
+        .countDown strong{font-size: 12px;}
+        .countDown{width: 100%;}
+}

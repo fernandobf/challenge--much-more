@@ -1,0 +1,117 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="theme-color" content="#35383b">
+        <title>square.cOm</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+<body class="contact">
+    <header>
+        <img src="img/logo.png" alt="">
+        <ul class="nav">
+            <li><a href="about.html" title="About Us">About Us</a></li>
+            <li><a href="contact.html" title="Contact">Contact</a></li>
+        </ul>
+    </header>
+<div class="content">
+    <div class="left">
+        <h2>Contact <span>Us</span></h2>
+        <p>
+            We are here to help you and find answers to your questions on our Support section.
+            If you can't find the answer to your question or have any feedback, reach ou to us by completing the form.
+            All fields are mandadory unless otherwise stated.
+        </p>
+        <div class="infos">
+            <ul>
+                <li><strong>Address: </strong>123 Palo Alto, CA 943000</li>
+                <li><strong>Phone: </strong>+1 234-567-8910</li>
+                <li><strong>Email: </strong>contact@yourdomain.com</li>
+            </ul>
+        </div>
+        <ul class="socialMedia">
+            <li><a href="" target="_blank" title="Facebook"><img src="img/ico-fb.png"></a></li>
+            <li><a href="" target="_blank" title="Google Plus"><img src="img/ico-g+.png"></a></li>
+            <li><a href="" target="_blank" title="LinkedIn"><img src="img/ico-in.png"></a></li>
+            <li><a href="" target="_blank" title="Twitter"><img src="img/ico-tw.png"></a></li>
+        </ul>
+    </div>
+    <div class="right">
+        <div class="wrap">
+            <form action="">
+                <input id="email" type="email" placeholder="Your Email" class="valid" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
+                <input id="subject" type="text" placeholder="Your Name" class="valid" required="required" pattern="[A-Za-z0-9]{1,20}"/>
+                <input id="name" type="text" placeholder="Subject" class="valid" required="required" pattern="[A-Za-z0-9]{1,20}"/>
+                <textarea name="" id="comment" placeholder="Your Message" class="valid" required="required" pattern="[A-Za-z0-9]{1,20}"></textarea>
+                <input id="tokenField" type="hidden" />
+                <div class="warning"></div>
+                <input type="submit" id="submitButton" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+    $('#submitButton').on('click',function(e){
+        
+        
+            if($("#email").val() == '' || $("#subject").val() == '' || $("#name").val() == '' || $("#comment").val() == ''){
+                $('.warning').html('Preencha todos os campos');
+            }else{
+                $('.warning').hide();
+                var person = {
+                    email: $("#email").val(),
+                    subject:$("#subject").val(),
+                    name:$("#name").val(),
+                    comment:$("#comment").val(),
+                    tokenField:$("#tokenField").val()
+                } 
+                $.ajax({
+                    url: "https://sendmail.muchomas.xyz/",
+                    dataType: 'jsonp',
+                    crossDomain: true,
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(person),
+                    headers:{
+                        'Access-Control-Allow-Origin': 'http://localhost:3000/',
+                        "Content-Type": "application/json",
+                        'Authorization': "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJNdWNoTW9yZSIsImlhdCI6MTU4MzQzMTEyOCwiZXhwIjoxNjE0OTY3MTI4LCJhdWQiOiJ3d3cubXVjaG1vcmUuY29tIiwic3ViIjoibXVjaG1vcmUtdGVzdC1kZXYiLCJHaXZlbk5hbWUiOiJKb2hubnkiLCJTdXJuYW1lIjoiUm9ja2V0IiwiRW1haWwiOiJqcm9ja2V0QGV4YW1wbGUuY29tIiwiUm9sZSI6WyJNYW5hZ2VyIiwiUHJvamVjdCBBZG1pbmlzdHJhdG9yIl19.x5i2ldiTazjY1ANxdoURBiQ-TXqam_K1KJfdo3puYEQ"
+                        },
+                    async: false,
+                    success: function(){ 
+                        $('.warning').show().html('Email enviado com sucesso');
+                    },
+                    error: function(){
+                        $('.warning').show().html('Houve um erro ao enviar o email');
+                    }
+                })
+               
+            }
+            
+            //e.preventDefault();
+      
+    });
+});
+
+
+
+
+
+</script>
+
+
+</body>
+
+</html>
+
